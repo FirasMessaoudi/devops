@@ -48,4 +48,11 @@ class DockerApplicationTests {
                 .andExpect(status().isOk())
                 .andReturn();
     }
+    @Test
+    public void findByName() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.get("/ride/findByName/Monorail")
+                .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andReturn();
+    }
 }

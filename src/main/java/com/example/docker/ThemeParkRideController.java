@@ -22,4 +22,8 @@ public class ThemeParkRideController {
     public ThemeParkRide createRide( @RequestBody ThemeParkRide themeParkRide) {
         return themeParkRideRepository.save(themeParkRide);
     }
+    @GetMapping(value = "/ride/findByName/{name}")
+    public Iterable<ThemeParkRide> findByName(@PathVariable("name") String name) {
+        return themeParkRideRepository.findByName(name);
+    }
 }
